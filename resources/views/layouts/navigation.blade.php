@@ -15,10 +15,33 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link>
+                        {{__('Contratos')}}
+                    </x-nav-link>
+                    <x-nav-link :href="route('conta.index')" :active="request()->routeIs('conta.index')">
+                        {{__('Contas')}}
+                    </x-nav-link>
+                    <x-nav-link>
+                        {{__('Fornecedores')}}
+                    </x-nav-link>
                 </div>
             </div>
 
-            <!-- Settings Dropdown -->
+            {{-- <!-- Settings Dropdown -->
+            <div class="w-20 h-10 rounded-full bg-white flex items-center transition duration-300 focus:outline-none shadow">
+                <button 
+                class="w-20 h-10 rounded-full bg-white flex items-center transition duration-300 focus:outline-none shadow"
+                onclick="toggleTheme()">
+                <div
+                    id="switch-toggle"
+                    class="w-12 h-12 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </div>
+            </button>
+            </div> --}}
+
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -35,7 +58,7 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __('Perfil') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -45,7 +68,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Sair') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
