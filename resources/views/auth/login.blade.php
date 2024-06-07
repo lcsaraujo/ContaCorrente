@@ -32,16 +32,20 @@
             </label>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
 
-            <x-primary-button class="ms-3">
+        <div class="inline items-center justify-end mt-6">
+            <x-primary-button class="ms-3 mt-8 float-end">
                 {{ __('Log in') }}
             </x-primary-button>
+
+            @if (Route::has('password.request'))
+            <a class="float-end mt-9 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
+                {{ __('Forgot your password?') }}
+            </a>
+            @endif
         </div>
     </form>
+    <a type="button" class="inline-flex mt-8 items-center px-2.5 py-2.5 dark:bg-red-600 border border-transparent rounded-md font-bold text-xs text-white dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-red focus:bg-gray-700 dark:focus:bg-red active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150 float-start" href="{{ route('register') }}">
+        Register
+    </a>
 </x-guest-layout>
